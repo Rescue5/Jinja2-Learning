@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="RUS">
-<head>
-    <meta charset="UTF-8">
-    <title>Изучение Jinja</title>
-</head>
+{% import 'diolog.html' as dlg %}
+{% include 'header.html' ignore missing %}
+<!--content-->
 <body>
 <ul>
     {% for u in users -%}
+        {{ dlg.diolog_1('Внимание','это тестовый диалог')}}
     <li>{{u.name}}</li>
     {%endfor%}
 </ul>
-
 </body>
-</html>
+{% include 'footer.html' %}
